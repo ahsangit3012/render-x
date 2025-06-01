@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "~@fortawesome/fontawesome-free/css/all.min.css";
+
+/* Font setup */
+body {
+  min-height: 100vh;
+  margin: 0;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  background: #ffffff;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* Orbitron for headers only */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.tech-title {
+  font-family: "Orbitron", sans-serif;
+}
+
+/* Optional: custom class for Orbitron in other elements */
+.orbitron {
+  font-family: "Orbitron", sans-serif;
+}
+
+/* Hide scrollbars */
+.scrollbar-hide {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+/* Neon animated border */
+.neon-box {
+  position: relative;
+  z-index: 0;
+}
+
+.neon-box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 1rem;
+  padding: 2px;
+  background: linear-gradient(135deg, #10b981, #06b6d4, #8b5cf6, #10b981);
+  background-size: 300% 300%;
+  animation: pulse-border 6s linear infinite;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: -1;
+}
+
+@keyframes pulse-border {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
