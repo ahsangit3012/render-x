@@ -82,7 +82,7 @@ const Booking = () => {
           new Date(form.tournamentDateTime).toISOString(),
           new Date(
             new Date(form.tournamentDateTime).getTime() + 60 * 60 * 1000
-          ).toISOString() // +1 hour
+          ).toISOString()
         );
       }
 

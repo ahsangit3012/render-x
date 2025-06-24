@@ -16,11 +16,14 @@ const Home = () => {
     e.preventDefault();
 
     try {
-      const res = await fetch("http://localhost:5000/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(contactForm),
-      });
+      const res = await fetch(
+        "https://render-x-backend.onrender.com/api/contact",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(contactForm),
+        }
+      );
 
       const data = await res.json();
 
@@ -126,7 +129,7 @@ const Home = () => {
             },
             { title: "Valorant", genre: "Action", img: "/valo2.png" },
             { title: "Fortnite", genre: "Battle Royale", img: "/fortnite.jpg" },
-            // Add as many new games as you like!
+
             { title: "PUBG", genre: "Battle Royale", img: "/pubg.jpg" },
             {
               title: "Apex Legends",

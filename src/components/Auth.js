@@ -1,4 +1,3 @@
-// src/pages/Auth.js
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { auth, googleProvider, db } from "../firebase";

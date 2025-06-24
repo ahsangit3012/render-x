@@ -1,5 +1,3 @@
-// src/utils/googleCalendar.js
-
 const CLIENT_ID =
   "328701998111-tmisd20ksfna4driqc6u2kj597j7cp0s.apps.googleusercontent.com";
 const SCOPES = "https://www.googleapis.com/auth/calendar.events";
@@ -7,7 +5,6 @@ const SCOPES = "https://www.googleapis.com/auth/calendar.events";
 let accessToken = "";
 
 export const initializeGapi = () => {
-  // No need to load old gapi modules, just ensure script is present
   if (
     !window.google ||
     !window.google.accounts ||

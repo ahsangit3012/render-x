@@ -21,7 +21,7 @@ const CheckoutForm = ({ cart, total, paymentMethod, navigate }) => {
 
     // 1. Create PaymentIntent
     const paymentRes = await fetch(
-      "http://localhost:5000/api/payments/create-payment",
+      "https://render-x-backend.onrender.com/api/payments/create-payment",
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -43,14 +43,17 @@ const CheckoutForm = ({ cart, total, paymentMethod, navigate }) => {
       alert(result.error.message);
     } else if (result.paymentIntent.status === "succeeded") {
       // 3. Save Order
-      const orderRes = await fetch("http://localhost:5000/api/orders", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          items: cart.map(({ name, price }) => ({ name, price })),
-          total: Number(total),
-        }),
-      });
+      const orderRes = await fetch(
+        "https://render-x-backend.onrender.com/api/orders",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            items: cart.map(({ name, price }) => ({ name, price })),
+            total: Number(total),
+          }),
+        }
+      );
 
       if (orderRes.ok) {
         navigate("/success", { state: { cart, total, paymentMethod } });

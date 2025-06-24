@@ -2,7 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { auth } from "../firebase";
 import { onAuthStateChanged } from "firebase/auth";
-import { Menu, X } from "lucide-react"; // Optional: or use Unicode or SVG icons
+import { Menu, X } from "lucide-react"; 
 
 const Navbar = () => {
   const [user, setUser] = useState(null);

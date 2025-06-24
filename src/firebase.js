@@ -1,7 +1,6 @@
-// src/firebase.js
 import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
-import { getFirestore } from "firebase/firestore"; // 🔥 Firestore added
+import { getFirestore } from "firebase/firestore";
 
 // 🔐 Your config
 const firebaseConfig = {
@@ -14,13 +13,13 @@ const firebaseConfig = {
   measurementId: "G-KJF9HGZ82P",
 };
 
-// 🔥 Initialize Firebase
+//Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-// ✅ Auth & Firestore setup
+//  Auth & Firestore setup
 const auth = getAuth(app);
 const googleProvider = new GoogleAuthProvider();
-const db = getFirestore(app); // ✅ Firestore initialized
+const db = getFirestore(app); //
 
-// Export to use in components
+// Export to use in
 export { auth, googleProvider, db };

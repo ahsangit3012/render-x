@@ -115,7 +115,7 @@ const Games = () => {
               <h3 className="text-lg font-semibold">{game.title}</h3>
               <p className="text-gray-400 text-sm mt-1">{game.platform}</p>
 
-              {/* ✅ Step 2: Link to booking page */}
+              {/*  Step 2: Link to booking page */}
               <Link to="/booking">
                 <button className="mt-3 w-full bg-emerald-400 text-black font-bold py-2 px-4 rounded hover:bg-white transition">
                   Book
